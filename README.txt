@@ -30,6 +30,12 @@ efetch_error_log.txt - If present, stores any warnings and errors produced by ef
 MetaDamage_plots.pdf - Plots proportions of mismatches on the 5' and 3' ends across query sequences. Includes the 95% confidence intervals of C->T and G->A mismatches at the very end positions.
 MetaDamage_CIs.txt - For those very end positions, lists the point estimates and 95% CI upper and lower bounds.
 
+MetaDamage Pre-requisites 
+===========
+-	Input:  Query sequences must be a BLAST table (see stage 2 below) or FASTA of sorted reads by phylogenetic class (i.e. Viridiplantae). This can be sorted using metagenomic tool such as MEGAN (Huson et al., 2007)
+-	Stage 2: Either a directory for a local BLAST database or the NCBI Efetch command (part of Entrez Direct; https://www.ncbi.nlm.nih.gov/books/NBK179288/), which will need to be installed. The MetaDamage tool will default to using Efetch if local BLAST database not specified.
+-	Stage 5:  Stage 5 requires R to be installed. R dependencies required for this stage are ggplot2, gridExtra and grid. 
+
 
 Flags
 ===========
@@ -46,7 +52,7 @@ FLAGS
 -help : help option to generate this output.
 
 
-Additional notes 
+Additional notes - stages 
 ================
 
 1 Running BLAST
